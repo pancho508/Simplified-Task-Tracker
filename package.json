@@ -1,0 +1,28 @@
+{
+  "name": "simplified-task-tracker",
+  "version": "1.0.0",
+  "description": "week 1: Simplified Task Tracker (TypeScript, PostgreSQL, and Core Features)   => Instead of doing daily toy problems ima be building some small weekly apps, doing an hour of code a day, or pulling out my laptop when eating out. xD        Have FUN !!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn index.ts",
+    "hi": "ts-node hi.ts",
+    "seed": "./seed-tasks.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "pg": "^8.14.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.21"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.17",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.2"
+  }
+}

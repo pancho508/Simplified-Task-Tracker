@@ -59,3 +59,6 @@ CRUD post request
 
 
     curl -X DELETE http://localhost:3000/tasks/1
+
+
+Need to start building a front end, bro just do a cdn approach with simple react kay, 

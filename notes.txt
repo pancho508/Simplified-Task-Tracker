@@ -1,0 +1,61 @@
+Pancho you already have postgres man 
+
+    brew services list 
+    brew services start postgresql
+
+connect 
+
+    psql -U postgres -d task_tracker
+
+    !! YOU DONT REMEMBER YOUR USER NAME USE 
+    !! WHO ARE YOU Pancho
+    psql -U $(whoami) -d postgres
+    \du   -> list users
+
+Create the DB bro
+    get out /q 
+    createdb -U postgres task_tracker
+
+GET BACK IN
+    psql -U postgres -d task_tracker
+
+
+PSQL commands
+
+    \l           -- list databases
+    \c dbname    -- connect to a different DB
+    \dt          -- list tables
+    \d tablename -- describe a table
+    SELECT * FROM task;  -- show data from your task table
+    \q           -- quit
+
+I have not tables , its going to be a simple to do list. Just make a single table, dont get crazy man
+    CREATE TABLE task (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        description TEXT,
+        completed BOOLEAN DEFAULT FALSE
+    );
+    
+    -- Add a few tasks
+    INSERT INTO task (title, description) VALUES ('Task 1', 'Description for Task 1');
+    INSERT INTO task (title, description) VALUES ('Task 2', 'Description for Task 2');
+    INSERT INTO task (title, description) VALUES ('Task 3', 'Description for Task 3');
+
+
+CRUD post request
+
+    curl -X POST http://localhost:3000/tasks/create \
+    -H "Content-Type: application/json" \
+    -d '{"title": "Test CRUD", "description": "Post-powered"}'
+
+
+    curl -X POST http://localhost:3000/tasks
+
+
+    curl -X PATCH http://localhost:3000/tasks/1 \
+    -H "Content-Type: application/json" \
+    -d '{"completed": true, "title": "Updated Title"}'
+
+
+    curl -X DELETE http://localhost:3000/tasks/1

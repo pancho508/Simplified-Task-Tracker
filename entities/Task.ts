@@ -1,13 +1,17 @@
+// entities/Task.ts
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity()
+@Entity({ name: 'task' })
 export class Task {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  title: string;
+  title!: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'text', nullable: true })
   description?: string;
+
+  @Column({ default: false })
+  completed!: boolean;
 }
